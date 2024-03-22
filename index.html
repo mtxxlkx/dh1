@@ -1,0 +1,277 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>满天星悦来开心导航</title>  
+<style>  
+  /* 整体样式 */  
+  body {  
+    font-family: Arial, sans-serif;  
+    margin: 0;  
+    padding: 20px;  
+  
+    /* 添加背景图像样式 */  
+    background-image: url('https://wp.szyyds.cn/f/rjafl/%E5%AF%BC%E8%88%AA%E7%BD%91%E7%AB%99%E8%83%8C%E6%99%AF%E5%9B%BE.jpg'); /*路径或URL */  
+    background-position: center center; /* 图片居中 */  
+    background-repeat: no-repeat; /* 不重复图片 */  
+    background-size: cover; /* 覆盖整个页面 */  
+    background-attachment: fixed; /* 背景图不随页面滚动 */  
+  }  
+  
+  /* 搜索栏样式 */  
+  .search-container {  
+    display: flex;  
+    align-items: center;  
+    justify-content: center;  
+    margin-bottom: 20px;  
+  }  
+  
+  .search-input {  
+    width: 300px;  
+    padding: 10px;  
+    border: 1px solid #ccc;  
+    border-radius: 4px;  
+    font-size: 16px;  
+    margin-right: 10px;  
+  }  
+  
+  .search-button {  
+    padding: 10px 20px;  
+    background-color: #4CAF50;  
+    color: white;  
+    border: none;  
+    border-radius: 4px;  
+    cursor: pointer;  
+  }  
+  
+  .search-button:hover {  
+    background-color: #45a049;  
+  }  
+  
+  .search-select {  
+    padding: 8px;  
+    font-size: 16px;  
+    border: 1px solid #ccc;  
+    border-radius: 4px;  
+    margin-right: 10px;  
+  }  
+  
+  /* 推荐网站列表样式 */  
+  .recommendations {  
+    list-style-type: none;  
+    padding: 0;  
+    display: flex;  
+    flex-wrap: wrap;  
+    justify-content: space-between;  
+  }  
+  
+  .recommendations li {  
+    width: calc(50% - 10px); /* 减去一些宽度以适应间距 */  
+    margin-bottom: 20px;  
+  }  
+  
+  .recommendations a {  
+    display: block;  
+    text-decoration: none;  
+    color: #333;  
+    font-weight: bold;  
+    background-color: rgba(255, 165, 0, 0.5); /* 透明橙色 */  
+    padding: 10px;  
+    border-radius: 4px;  
+    transition: background-color 0.3s ease; /* 添加过渡效果 */  
+  }  
+  
+  .recommendations a:hover {  
+    background-color: rgba(255, 165, 0, 0.8); /* 鼠标悬停时颜色变深 */  
+  }  
+  
+  /* 响应式布局，确保在小屏幕上也能正确显示 */  
+  @media (max-width: 600px) {  
+    .recommendations li {  
+      width: 100%; /* 在小屏幕上每个格子占满一行 */  
+    }  
+  }  
+</style>  
+</head>  
+<body>  
+  
+<div class="search-container">  
+  <input type="text" id="search-input" class="search-input" placeholder="输入搜索关键词...">  
+  <select id="search-select" class="search-select">  
+    <option value="wuzhuiso">360无追wuzhuiso</option>  
+    <option value="baidu">百度Baidu</option>  
+    <option value="bing">必应Bing</option>  
+    <option value="international-bing">必应国际Bing</option>  
+  </select>  
+  <button id="search-button" class="search-button">搜索</button>  
+</div>  
+  
+<script>  
+  document.getElementById('search-button').addEventListener('click', function() {  
+    var searchText = document.getElementById('search-input').value;  
+    var selectedEngine = document.getElementById('search-select').value;  
+    var searchUrl;  
+  
+    if (searchText.trim() === '') {  
+      alert('Please enter a search query.');  
+      return;  
+    }  
+  
+    if (selectedEngine === 'wuzhuiso') {  
+      searchUrl = 'https://www.wuzhuiso.com/s?q=' + encodeURIComponent(searchText);  
+    } else if (selectedEngine === 'baidu') {  
+      searchUrl = 'https://www.baidu.com/s?wd=' + encodeURIComponent(searchText);  
+    } else if (selectedEngine === 'bing') {  
+      searchUrl = 'https://www.bing.com/search?q=' + encodeURIComponent(searchText);  
+    } else if (selectedEngine === 'international-bing') {  
+      searchUrl = 'https://cn.bing.com/search?q=' + encodeURIComponent(searchText);  
+    }  
+  
+    window.open(searchUrl, '_blank');  
+  });  
+</script>  
+  
+<div>  
+    <!-- HTML 结构 -->  
+    <div class="grid-container">  
+        <a href="https://m.nbd.com.cn/" class="grid-item">每日经济新闻网</a>  
+        <a href="https://m.yicai.com/" class="grid-item">第一财经网</a>  
+    </div>  
+    <div class="grid-container">  
+        <a href="https://www.kankanews.com/?from=mobile" class="grid-item">看看新闻网</a>  
+        <a href="https://www.ifeng.com/" class="grid-item">凤凰网</a>  
+    </div>  
+    <div class="grid-container">  
+        <a href="http://www.everyday-news.com.cn/mobile/index/index.html" class="grid-item">每日新闻网</a>  
+        <a href="https://tophub.today/c/news" class="grid-item">今日热榜网站</a>  
+    </div>  
+    <div class="grid-container">  
+        <a href="https://www.zol.com.cn/" class="grid-item">中关村在线看科技资讯网</a>  
+        <a href="https://bz.szyyds.cn/" class="grid-item">小马壁纸高清壁纸网</a>  
+    </div>  
+    <div class="grid-container">  
+        <a href="https://jx.szyyds.cn/" class="grid-item">vip视频，影视解析网</a>  
+        <a href="https://yy.szyyds.cn/" class="grid-item">音乐在线免费听网</a>  
+    </div>  
+    <div class="grid-container">  
+        <a href="https://chat.360.com/?src=ai_360_com" class="grid-item">360智脑网页版AI网</a>  
+        <a href="https://yige.baidu.com/" class="grid-item">百度文心一格AI网</a>  
+    </div>  
+    <div class="grid-container">  
+        <a href="https://aigc.baidu.com/make" class="grid-item">百度AI成片网</a>  
+        <a href="https://aigc.yizhentv.com/index.html?ref=blog.szyyds.cn" class="grid-item">一刻秒剪AI成片网</a>  
+    </div>  
+    <div class="grid-container"> 
+        <a href="https://creative.yiqijian.com/?ref=blog.szyyds.cn" class="grid-item">百万高清视频素材库网</a>  
+        <a href="https://tools.shangui.cc/" class="grid-item">SG工具箱常用编辑工具网</a>  
+    </div>  
+    <div class="grid-container"> 
+        <a href="https://superparse.com/" class="grid-item">在线解析视频下载1网站</a>  
+        <a href="https://www.zanqianba.com/" class="grid-item">在线解析视频下载2网站</a>  
+    </div>  
+    <div class="grid-container"> 
+        <a href="https://www.ixinjian.com/tools/compress" class="grid-item">免费在线视频压缩工具网</a>  
+        <a href="https://www.yikm.net/" class="grid-item">在线经典街机游戏解压网</a>  
+    </div>  
+    <div class="grid-container"> 
+        <a href="https://m.hao86.com/" class="grid-item">知识和日常使用工具查询网</a>  
+        <a href="https://fanwenm.hao86.com/" class="grid-item">实用的总结文章网</a>  
+    </div>  
+    <div class="grid-container"> 
+        <a href="paint.mobvoi.com" class="grid-item">AI图像内容创作网</a>  
+        <a href="https://magic-sketchpad.glitch.me/" class="grid-item">AI绘画画画网</a>  
+    </div>  
+    <div class="grid-container"> 
+        <a href="https://dilidili.online/" class="grid-item">嘀哩嘀哩D站看动漫网</a>  
+        <a href="https://33.agilestudio.cn/" class="grid-item">33台词找字幕文件-通过台词找影片素材网</a>  
+    </div>  
+    <div class="grid-container"> 
+        <a href="https://fse.agilestudio.cn/" class="grid-item">33搜帧基于AI能力，可以帮你快速找到和剪切相关视频画面，并且支持一键合成视频，让视频创作变得更有效率网</a>  
+        <a href="https://www.dbbqb.com/?from=33.agilestudio.cn" class="grid-item">逗比拯救世界–表情包搜索网</a>  
+    </div>  
+    <div class="grid-container"> 
+        <a href="https://unsplash.com/?from=33.agilestudio.cn" class="grid-item">unsplash
+–免费好看的图片网</a>  
+        <a href="https://www.shenyandayi.com/?from=33.agilestudio.cn" class="grid-item">深言达意–根据描述，找到贴切的词语和名言佳句网</a>  
+    </div>  
+        
+  
+    <!-- 内联 CSS 样式 -->  
+    <style scoped>  
+    .grid-container {  
+        display: flex;  
+        flex-wrap: wrap;  
+        justify-content: space-between;  
+        margin-bottom: 10px; /* 行与行之间的间距 */  
+    }  
+  
+    .grid-item {  
+        flex: 0 0 calc(50% - 10px); /* 减去间距，防止换行 */  
+        background-color: rgba(255, 165, 0, 0.5); /* 透明橙色背景 */  
+        padding: 20px; /* 内部间距 */  
+        box-sizing: border-box; /* 确保 padding 不会增加元素的总宽度 */  
+        margin: 5px; /* 添加外边距以改善视觉效果 */  
+        color: #000; /* 文本颜色 */  
+        text-decoration: none; /* 移除下划线 */  
+        border: 1px solid rgba(255, 165, 0, 1); /* 可选：添加边框 */  
+        display: block; /* 确保元素以块级元素显示，占据整个容器宽度 */  
+    }  
+  
+    /* 可选：鼠标悬停效果 */  
+    .grid-item:hover {  
+        background-color: rgba(255, 165, 0, 0.7); /* 鼠标悬停时改变背景透明度 */  
+    }  
+    </style>  
+    
+        </style>   
+               <script>
+        (function () {
+            var a_idx = 0;
+            window.onclick = function (event) {
+            var a = new Array("❤富强❤", "❤民主❤", "❤文明❤", "❤和谐❤", "❤自由❤", "❤平等❤", "❤公正❤", "❤法治❤", "❤爱国❤",
+                    "❤敬业❤", "❤诚信❤", "❤友善❤");
+ 
+                var heart = document.createElement("b"); //创建b元素
+                heart.onselectstart = new Function('event.returnValue=false'); //防止拖动
+ 
+                document.body.appendChild(heart).innerHTML = a[a_idx]; //将b元素添加到页面上
+                a_idx = (a_idx + 1) % a.length;
+                heart.style.cssText = "position: fixed;left:-100%;"; //给p元素设置样式
+ 
+                var f = 16, // 字体大小
+                    x = event.clientX - f / 2, // 横坐标
+                    y = event.clientY - f, // 纵坐标
+                    c = randomColor(), // 随机颜色
+                    a = 1, // 透明度
+                    s = 1.2; // 放大缩小
+ 
+                var timer = setInterval(function () { //添加定时器
+                    if (a <= 0) {
+                        document.body.removeChild(heart);
+                        clearInterval(timer);
+                    } else {
+                        heart.style.cssText = "font-size:16px;cursor: default;position: fixed;color:" +
+                            c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +
+                            s + ");";
+ 
+                        y--;
+                        a -= 0.016;
+                        s += 0.002;
+                    }
+                }, 15)
+ 
+            }
+            // 随机颜色
+            function randomColor() {
+ 
+                return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math
+                .random() * 255)) + ")";
+ 
+            }
+        }());
+    </script>
+</div>
+</style>
+</body>  
+</html>
